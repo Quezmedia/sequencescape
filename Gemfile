@@ -139,9 +139,9 @@ group :development do
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   gem 'mini_racer'
-  # Pat of the JS assets pipleine
-  gem 'uglifier', '>= 1.0.3'
 end
+# Pat of the JS assets pipleine
+gem 'uglifier', '>= 1.0.3'
 
 group :development, :test, :cucumber do
   gem 'pry'
