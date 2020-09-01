@@ -1,14 +1,6 @@
 # SQLite version 3.x
 #   gem install sqlite3-ruby (not necessary on OS X Leopard)
 
-# To enable developers to have their own development setup per repository clone we allow them to stick
-# the suffix they want attached to any database names in the suffix file in the root of the project.
-<% suffix = if ENV['SUFFIX']
-              "_#{ENV['SUFFIX']}"
-            else
-              "_#{File.read(Rails.root.join('database_suffix'))}".strip rescue nil
-            end %>
-
 mysql: &MYSQL
   adapter: mysql2
   username: <%= ENV.fetch('DBUSERNAME','root') %>
@@ -30,12 +22,12 @@ mysql: &MYSQL
 
 development:
   <<: *MYSQL
-  database: sequencescape_development<%= suffix %>
+  database: sequencescape_developmen
 
   # indentation is deliberate!
   development_warehouse: &warehouse
     <<: *MYSQL
-    database: warehouse_development<%= suffix %>
+    database: warehouse_development
 
 development_local:
   adapter: sqlite3
@@ -68,13 +60,13 @@ development_snp:
 
 test: &test
   <<: *MYSQL
-  database: sequencescape_test<%= ENV['TEST_ENV_NUMBER'] %><%= suffix %>
+  database: sequencescape_test<%= ENV['TEST_ENV_NUMBER'] %>
   pool: 10
   timeout: 5000
 
 cucumber:
   <<: *test
-  database: sequencescape_test<%= ENV['TEST_ENV_NUMBER'] %><%= suffix %>_cuke
+  database: sequencescape_test<%= ENV['TEST_ENV_NUMBER'] %>_cuke
 
 # In production environments adapter should be 'oracle_enhanced',
 # Username, password and database are values that go to sqlplus login <username>/<password>@<database>
