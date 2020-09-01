@@ -144,18 +144,18 @@ end
 gem 'uglifier', '>= 1.0.3'
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
+gem 'bootstrap'
+gem 'font-awesome-sass'
+gem 'sassc', '2.1.0'
+gem 'sass-rails'
+gem 'select2-rails'
 
 group :development, :test, :cucumber do
   gem 'pry'
   gem 'pry-byebug'
   gem 'pry-stack_explorer'
   # Asset compilation, js and style libraries
-  gem 'bootstrap'
-  gem 'font-awesome-sass'
   gem 'knapsack'
-  gem 'sassc', '2.1.0'
-  gem 'sass-rails'
-  gem 'select2-rails'
   gem 'webmock'
 end
 
