@@ -142,6 +142,8 @@ group :development do
 end
 # Pat of the JS assets pipleine
 gem 'uglifier', '>= 1.0.3'
+gem 'jquery-rails'
+gem 'jquery-ui-rails'
 
 group :development, :test, :cucumber do
   gem 'pry'
@@ -150,8 +152,6 @@ group :development, :test, :cucumber do
   # Asset compilation, js and style libraries
   gem 'bootstrap'
   gem 'font-awesome-sass'
-  gem 'jquery-rails'
-  gem 'jquery-ui-rails'
   gem 'knapsack'
   gem 'sassc', '2.1.0'
   gem 'sass-rails'
