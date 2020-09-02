@@ -20,14 +20,18 @@ mysql: &MYSQL
     # is too small for larger pools.
     group_concat_max_len: 67108864
 
+production:
+  <<: *MYSQL
+  database: sequencescape_developmen
+
 development:
   <<: *MYSQL
   database: sequencescape_developmen
 
   # indentation is deliberate!
-  development_warehouse: &warehouse
-    <<: *MYSQL
-    database: warehouse_development
+  #development_warehouse: &warehouse
+  #  <<: *MYSQL
+  #  database: warehouse_development
 
 development_local:
   adapter: sqlite3

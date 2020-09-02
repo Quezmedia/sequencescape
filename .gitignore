@@ -43,3 +43,6 @@ sbin
 yarn-debug.log*
 .yarn-integrity
 *.json
+
+# Ignore master key for decrypting credentials and more.
+/config/master.key
